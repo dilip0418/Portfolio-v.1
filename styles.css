@@ -1,0 +1,372 @@
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Add your custom styles here */
+/* Set the gradient background for the entire page */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: white;
+    /* background: linear-gradient(to bottom, #cd6a6a, #353b41); */
+    background-image: url("images/bg.jpg");
+    /* Replace "path/to/your/image.jpg" with the actual path to your image file */
+    /* Adjust the colors as per your preference */
+    background-attachment: fixed;
+    /* Keep the background fixed while scrolling */
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Add this class to the navbar when it becomes fixed */
+.fixed-top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin-bottom: 10px;
+    /* background: linear-gradient(to bottom, #cd6a6a, #353b41); */
+    /* Adjust the colors as per your preference */
+    background-image: url("images/bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    /* Set the font color for better visibility on the gradient background */
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+    /* Add a smooth transition effect */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 70px auto;
+}
+
+/* Add a top margin to the sections to offset the fixed navbar */
+.section {
+    padding: 80px 60px 10px;
+    /* margin-top: 100px; */
+    /* Adjust this value according to the height of your navbar */
+}
+
+.greet {
+    font-size: 30px;
+}
+
+.name {
+    font-size: 36px;
+    font-weight: bold;
+    display: inline-block;
+    height: 48px;
+    /* Adjust the height as needed to fit the name */
+    overflow: hidden;
+}
+
+.introduction {
+    font-size: 18px;
+}
+
+/* Skill Images styles */
+.skills-list .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.skills-list img {
+    max-width: 70px;
+    /* Set the maximum width of the images */
+    margin: 50px;
+    /* Add some spacing around the images */
+    cursor: pointer;
+    /* Show pointer cursor on hover */
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    /* Apply a smooth transition */
+}
+
+/* Scaling and tilt animation on hover */
+.skills-list img:hover {
+    transform: scale(1.2) rotate(5deg);
+    /* Apply scaling and tilt effect on hover */
+}
+
+/* Define the animation to reveal the images one by one */
+@keyframes fadeInSkills {
+    0% {
+        opacity: 0;
+        /* Start with opacity 0 */
+    }
+
+    100% {
+        opacity: 1;
+        /* End with opacity 1 (fully visible) */
+    }
+}
+
+/* Shaking animation on hover 
+.skills-list img:hover {
+    animation: shake 0.4s ease-in-out infinite;
+    /* Apply the shake animation 
+}*/
+
+
+
+/* Keyframes for the shake animation
+@keyframes shake {
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-5px);
+    }
+    50% {
+        transform: translateX(5px);
+    }
+    75% {
+        transform: translateX(-5px);
+    }
+} */
+
+.carousel-inner img {
+    max-height: 200px;
+    margin: 0 auto;
+}
+
+/* Projects carousel styles */
+.project-carousel .carousel-inner {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.project-card {
+    margin: 30px;
+    text-align: center;
+    padding: 70px;
+    background-image: url("images/card-bg-1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    /* Use flexbox for horizontal alignment */
+    align-items: center;
+    /* Center items vertically within the card */
+    position: relative;
+    /* Add relative positioning */
+}
+
+.project-card img {
+    max-width: 200px;
+    height: auto;
+    margin-right: 20px;
+    cursor: pointer;
+    /* Add some spacing between image and content */
+    transition: transform 0.3s ease-in-out;
+}
+
+.project-card img:hover {
+    transform: scale(1.1);
+}
+
+.project-card-content {
+    text-align: left;
+    flex: 1;
+    /* Make the content occupy remaining space */
+}
+
+/* Justify the content within the card */
+.project-card-content h3,
+.project-card-content p {
+    margin: 10px 0;
+}
+
+.project-card-content h3 {
+    text-align: center;
+    /* Center the title */
+}
+
+/* Mobile and Small Displays */
+@media (max-width: 768px) {
+
+    .fixed-top {
+        margin-bottom: 5px;
+    }
+
+    .project-card {
+        flex-direction: column;
+        /* Switch to vertical alignment for small screens */
+        text-align: center;
+        /* Align text to the center in vertical layout */
+    }
+
+    .project-card img {
+        margin: 0 2px 15px;
+        /* Center image in vertical layout and add spacing */
+    }
+
+    .project-card-content {
+        margin: 10px 0;
+        /* Add margin to separate content from image */
+    }
+
+    .project-card-content h3 {
+        font-size: 20px;
+    }
+
+    .project-card-content p {
+        font-size: 13px;
+    }
+
+    /* Justify the content within the card for small screens */
+    .project-card-content {
+        text-align: justify;
+    }
+}
+
+/* Adjust z-index of carousel controls to position them behind the card content */
+.carousel-control-prev,
+.carousel-control-next {
+    z-index: 1;
+    /* Set a higher z-index to move the controls above the cards */
+    position: absolute;
+    /* Use absolute positioning for fixed placement */
+    top: 50%;
+    /* Position the controls vertically at the middle */
+    transform: translateY(-50%);
+    /* Center the controls vertically */
+    opacity: 0;
+}
+
+
+
+
+
+/* Contact Section */
+#contact {
+    /* background-color: #f9f9f9; */
+    text-align: center;
+    padding: 40px 0;
+    margin-bottom: 40px;
+}
+
+.contact-icons {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-icons li {
+    display: inline-block;
+    margin: 10px;
+}
+
+.contact-icons li a {
+    display: block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    background-color: #333;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.contact-icons li a:hover {
+    background-color: #666;
+}
+
+/* Adjust padding and margin for smaller screens */
+@media (max-width: 450px) {
+    body {
+        padding: 5px;
+    }
+
+    .section {
+        padding: 60px 5px;
+    }
+
+    .navbar {
+        padding: 5px;
+        margin: 0%;
+    }
+
+    .navbar-brand {
+        font-size: 18px;
+    }
+
+    .nav-links {
+        margin-top: 5px;
+    }
+
+    .nav-links li {
+        margin: 5px 0;
+    }
+
+    .nav-link {
+        font-size: 14px;
+    }
+
+    .skills-list img {
+        margin: 5px;
+        max-width: 40px;
+        margin: 10px 30px;
+    }
+
+    .project-card {
+        padding: 10px;
+    }
+
+    #contact {
+        margin-bottom: 20px;
+    }
+}
+
+
+/* Copyright and Email Section */
+.copyright {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.copyright a {
+    color: #999;
+}
+
+/* Back to Top Button */
+#backToTopBtn {
+    display: none;
+    /* Hide the button by default */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #531b74c7;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+    /* Add animation */
+    animation: floating 2s infinite;
+}
+
+/* Animation keyframes */
+@keyframes floating {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
