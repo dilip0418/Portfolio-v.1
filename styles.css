@@ -222,7 +222,7 @@ body {
 
     /* Justify the content within the card for small screens */
     .project-card-content {
-        text-align: justify;
+        text-align: left;
     }
 }
 
